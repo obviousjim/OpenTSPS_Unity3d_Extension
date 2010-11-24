@@ -1,0 +1,6 @@
+# ignore for unity3d
+*.app/
+Temp/
+Library/
+Photoshop/
+Standard Assets/
