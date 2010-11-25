@@ -1,6 +1,6 @@
 /**
  * OpenTSPS + Unity3d Extension
- * Created by James George on 11/24/2011
+ * Created by James George on 11/24/2010
  * 
  * This example is distributed under The MIT License
  *

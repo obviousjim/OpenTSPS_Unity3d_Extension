@@ -1,6 +1,11 @@
 # ignore for unity3d
+.DS_Store
 *.app/
+
 Temp/
 Library/
 Photoshop/
 Standard Assets/
+
+*.csproj
+*.sln

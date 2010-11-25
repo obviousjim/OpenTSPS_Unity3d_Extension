@@ -24,17 +24,20 @@ INSTRUCTIONS
 
 	Step 3:
 	Set up your video camera to track some people. This requires some 
-	pretty specific and stable lighting. If it's note convenient see below for 
+	pretty specific and stable lighting. If it's not convenient see below for 
 	alternatives for prototyping applications with OpenTSPS/Unity3d
 
 	Step 4:
-	Run OpenTSPS and configure the OSC communication to send to appropriate host/port.
-	Most likely you're running these on the same computer, so you can specify IP: 
+	Start up OpenTSPS and configure the OSC communication to send to appropriate host/port.
+	Most likely you're running these on the same computer, so you can specify IP of
 	localhost and use the default OpenTSPS port 12000
 	
 	Step 5:
-	Run the Unity example. If there are people in your scene, you should see 
-	little rectangles moving around tracing their position.
+	Double click the OpenTSPSExample.unitypackage project. This will import the example into your scene with all 
+	the scripts attached and configured.
+	
+	If there are people in your scene TSPS scene you should see 
+	little cubes moving around tracing their position. Now you can take it from here!
 	
 	
 SCENE SET UP
