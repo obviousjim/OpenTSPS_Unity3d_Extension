@@ -10,7 +10,7 @@ This project provides a template and example project for combining the Toolkit f
 with Unity3d Game Engine (http://www.unity3d.com)
 
 a video example of the project is on my vimeo page
-http://vimeo.com/17168988
+http://vimeo.com/17177478
 
 INSTRUCTIONS
 *-----**-----**-----**-----**-----*
@@ -33,10 +33,11 @@ INSTRUCTIONS
 	localhost and use the default OpenTSPS port 12000
 	
 	Step 5:
-	Double click the OpenTSPSExample.unitypackage project. This will import the example into your scene with all 
-	the scripts attached and configured.
+	Double click the OpenTSPSExample.unitypackage project. This will import the example scene into
+	your current Unity Project if you have one open. Double click the openTSPSReceiver scene to 
+	check out the example.
 	
-	If there are people in your scene TSPS scene you should see 
+	Hit play. If are people in your TSPS scene you should see 
 	little cubes moving around tracing their position. Now you can take it from here!
 	
 	
@@ -48,9 +49,9 @@ SCENE SET UP
 	and then instantiates / moves / destroys cubes as they are received.
 	
 
-INCLUDED FILES
+INCLUDED SOURCE FILES
 *-----**-----**-----**-----**-----*
-Files:
+
 	OpenTSPSUnityListener.cs
 		An example script that can be added to the an empty game object 
 		that will then receive TSPS messages. This is an implementation of 
@@ -69,16 +70,15 @@ Files:
 		Container class for an OpenTSPS Person object which is created for each 
 		person in the scene
 		
-	OSC.NET 
+	OSC.NET/
 		includes an OSC implementation for Unity3d in C#
 
 WEB CAM ALTERNATIVES:
 *-----**-----**-----**-----**-----*
 
-	If access to a good people tracking set up isn't convenient there are several ways
-
-	There is a great program called CamTwist for OS X that can play quicktime movie as a 
-	WebCam so OpenTSPS can use it as input instead of a live feed.
+	If access to a good people tracking set up isn't convenient there 
+	is a great program called CamTwist for OS X that can play quicktime movie as a 
+	WebCam. This lets OpenTSPS use a movie file as input instead of a live camera.
 	http://allocinit.com/index.php?title=CamTwist
 
 	You'll need a good video to test it with. Theo Watson has some test videos that work 
