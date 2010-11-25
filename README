@@ -1,12 +1,13 @@
 *-----**-----**-----**-----**-----**-----**-----**-----**-----**-----*
 Unity3d + OpenTSPS Example project
 Created by James George 
-art: http://www.jamesgeorge.org/  | com: http://flightphase.com
+art: http://www.jamesgeorge.org/  | com: http://www.flightphase.com
 *-----**-----**-----**-----**-----**-----**-----**-----**-----**-----*
 
 November 24th 2010
 
-This project provides a template and example project for combining the Toolkit for Sensing People In Spaces (opentsps.com) with Unity3d Game Engine (unity3d.com)
+This project provides a template and example project for combining the Toolkit for Sensing People In Spaces (http://www.opentsps.com) 
+with Unity3d Game Engine (http://www.unity3d.com)
 
 a video example of the project is on my vimeo page
 http://vimeo.com/17168988
@@ -15,27 +16,32 @@ INSTRUCTIONS
 *-----**-----**-----**-----**-----*
 
 	Step 1: 
-	Download the Unity example in this repository (https://github.com/obviousjim/OpenTSPS_Unity3d_Extension)
+	Download the Unity example in this repository 
+	https://github.com/obviousjim/OpenTSPS_Unity3d_Extension
 
 	Step 2: 
 	Download a compiled binary of openTSPS from openTSPS.com
 
 	Step 3:
-	Set up your video camera to track some people. This requires some pretty specific and stable
-	lighting. If it's note convenient see below for alternatives for prototyping applications with OpenTSPS/Unity3d
+	Set up your video camera to track some people. This requires some 
+	pretty specific and stable lighting. If it's note convenient see below for 
+	alternatives for prototyping applications with OpenTSPS/Unity3d
 
 	Step 4:
 	Run OpenTSPS and configure the OSC communication to send to appropriate host/port.
-	Most likely you're running these on the same computer, so you can specify IP: localhost and use the default OpenTSPS port 12000
+	Most likely you're running these on the same computer, so you can specify IP: 
+	localhost and use the default OpenTSPS port 12000
 	
 	Step 5:
-	Run the Unity example. If there are people in your scene, you should see little rectangles moving around tracing their position.
+	Run the Unity example. If there are people in your scene, you should see 
+	little rectangles moving around tracing their position.
 	
 	
 SCENE SET UP
 *-----**-----**-----**-----**-----*
-	The example project creates a cube for each person in the scene and moves it along as the person moves across a 3d platform.  
-	OpenTSPSUnityListener.cs script is attached to an empty object. This object begins listening for OpenTSPS messages on game start up
+	The example project creates a cube for each person in the scene and moves 
+	it along as the person moves across a 3d platform.  OpenTSPSUnityListener.cs script is attached
+	to an empty object. This object begins listening for OpenTSPS messages on game start up
 	and then instantiates / moves / destroys cubes as they are received.
 	
 
@@ -44,17 +50,21 @@ INCLUDED FILES
 Files:
 	OpenTSPSUnityListener.cs
 		An example script that can be added to the an empty game object 
-		that will then receive TSPS messages. This is an implementation of the OpenTSPSListener interface class
-		This object also moves the objects within the scene 
+		that will then receive TSPS messages. This is an implementation of 
+		the OpenTSPSListener interface class This object also moves the cubes 
+		around within the scene.
 		
 	OpenTSPSListener.cs
-		Interface for TSPS listeners. Classes implementing this interface can listen to TPSP messages. 
+		Interface for TSPS listeners. Classes implementing this 
+		interface can listen to TPSP messages. 
 		
 	OpenTSPSReceiver.cs
-		Internal code that handles OSC messages and calls back to attached OpenTSPSListeners
+		Internal code that handles OSC messages and calls back to 
+		attached OpenTSPSListeners
 		
 	OpenTSPSPerson.cs
-		Container class for an OpenTSPS Person object which is created for each person in the scene
+		Container class for an OpenTSPS Person object which is created for each 
+		person in the scene
 		
 	OSC.NET 
 		includes an OSC implementation for Unity3d in C#
@@ -64,10 +74,12 @@ WEB CAM ALTERNATIVES:
 
 	If access to a good people tracking set up isn't convenient there are several ways
 
-	There is a great program called CamTwist for OS X that can play quicktime movie as a WebCam so OpenTSPS can use it as input instead of a live feed.
+	There is a great program called CamTwist for OS X that can play quicktime movie as a 
+	WebCam so OpenTSPS can use it as input instead of a live feed.
 	http://allocinit.com/index.php?title=CamTwist
 
-	You'll need a good video to test it with. Theo Watson has some test videos that work well with people tracking. Any of the overhead ones will do
+	You'll need a good video to test it with. Theo Watson has some test videos that work 
+	well with people tracking. Any of the overhead ones will do
 	http://muonics.net/cvMovies/
 
 	here are some more security-camera movies that work fairly well with TSPS:
@@ -84,16 +96,17 @@ ACKNOWLEDGMENTS
 
 	Big props to the OpenTSPS project for leading the way.
 	from the TSPS page:
-		"TSPS was started as a collaboration between the LAB at Rockwell Group and the LABS at IDEO. It began as an initiative between Dave 
-		Vondle (IDEO) and Joshua Walton (LAB at Rockwell Group) with many of the key components generated through the hard work of 
-		James Tichenor, Brett Renfer, and James George who in turn also used components from the openframeworks community, who in 
-		turn built upon many open source projects.
+		"TSPS was started as a collaboration between the LAB at Rockwell Group and the LABS at IDEO. 
+		It began as an initiative between Dave  Vondle (IDEO) and Joshua Walton (LAB at Rockwell Group) 
+		with many of the key components generated through the hard work of James Tichenor, 
+		Brett Renfer, and James George who in turn also used components from the openframeworks 
+		community, who in turn built upon many open source projects.
 
-		"Special thanks to the teams that develop Openframeworks, OpenCV, 
-		and the many individuals who are all working on creating better computer vision systems.
+		Special thanks to the teams that develop Openframeworks, OpenCV, 
+		and the many individuals who are all working on creating better computer vision systems."
 
 
-	contributions from community contributors including:
+	community contributors include:
 		Joshua Walton & James Tichenor (http://lab.rockwellgroup.com)
 		Brett Renfer (http://robotconscience.com/)
 		myself (http://www.jamesgeorge.org)
