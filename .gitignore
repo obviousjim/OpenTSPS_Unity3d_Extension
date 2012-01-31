@@ -1,11 +1,22 @@
-# ignore for unity3d
 .DS_Store
-*.app/
 
-Temp/
-Library/
-Photoshop/
-Standard Assets/
+Assets/Standard Assets/*
+Temp/*
+Library/*
 
-*.csproj
-*.sln
+Library/ScriptAssemblies/*
+Library/assetDatabase3
+
+!Library/*.asset
+!Library/AssetImportState
+!Library/AssetVersioning.db
+!Library/BuildPlayer.prefs
+!Library/ScriptMapper
+!Library/assetservercachev3
+!Library/expandedItems
+!Library/guidmapper
+!Library/unity default resources
+!Library/unity editor resources
+!Library/metadata/
+
+*.app
