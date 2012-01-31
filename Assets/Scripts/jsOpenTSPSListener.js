@@ -25,28 +25,17 @@
  * THE SOFTWARE.
  */
 
-using System;
-using System.Collections.Generic;
+function Update () {
+}
 
-namespace TSPS
-{
-	public class Person
-	{
-		public int id;
-		public int oid;
-		public int age;
-		public float centroidX;
-		public float centroidY;
-		public float velocityX;
-		public float velocityY;
-		public float boundingRectOriginX;
-		public float boundingRectOriginY;		
-		public float boundingRectSizeWidth;
-		public float boundingRectSizeHeight;
-		public float opticalFlowVelocityX;		
-		public float opticalFlowVelocityY;
-		
-		//TODO add contours
-	}
-	
+function PersonEntered(person : TSPS.Person){
+	Debug.Log("person entered");
+}
+
+function PersonUpdated(person : TSPS.Person ){
+	Debug.Log("person updated");	
+}
+
+function PersonWillLeave(person : TSPS.Person ){
+	Debug.Log("person left");	
 }
