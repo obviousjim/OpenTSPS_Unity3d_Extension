@@ -20,3 +20,6 @@ Library/assetDatabase3
 !Library/metadata/
 
 *.app
+
+*.csproj
+*.sln

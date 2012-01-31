@@ -33,6 +33,7 @@ namespace TSPS
 	public class OpenTSPSPerson
 	{
 		public int id;
+		public int oid;
 		public int age;
 		public float centroidX;
 		public float centroidY;
