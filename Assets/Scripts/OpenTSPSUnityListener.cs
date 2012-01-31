@@ -33,7 +33,7 @@ using TSPS;
 
 public class OpenTSPSUnityListener : MonoBehaviour, OpenTSPSListener  {
 	
-	public int port = 3333; //set this from the UI to change the port
+	public int port = 12000; //set this from the UI to change the port
 	
 	//create some materials and apply a different one to each new person
 	public Material	[] materials;
