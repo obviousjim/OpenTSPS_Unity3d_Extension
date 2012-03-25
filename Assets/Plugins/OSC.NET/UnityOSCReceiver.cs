@@ -13,7 +13,10 @@ public class UnityOSCReceiver : MonoBehaviour {
 	private OSCReceiver receiver;
 	private Thread thread;
 	
-	private List<OSCMessage> processQueue = new List<OSCMessage>();
+	private List<OSCMessage> processQueue = new List<OSCMessage>();		
+	public delegate void OSCMessageReceivedHandler(OSCMessage msg);
+	public static event OSCMessageReceivedHandler OSCMessageReceived;
+	
 	
 	public UnityOSCReceiver() {}
 
@@ -22,8 +25,26 @@ public class UnityOSCReceiver : MonoBehaviour {
 	}
 			
 	public void Start() {
-
+		connect();
+	}
+	
+	public void OnGUI(){
+		if(GUILayout.Button("Reconnect")){
+			if(connected){
+				disconnect();
+				Invoke("connect", .1f); //wait a tick to sync threading before reconnecting
+			}
+			else{
+				connect();
+			}
+		}
+	}
+	
+	
+	public void connect(){
+		
 		try {
+//			print("connecting.");
 			connected = true;
 			receiver = new OSCReceiver(port);
 			thread = new Thread(new ThreadStart(listen));
@@ -33,7 +54,6 @@ public class UnityOSCReceiver : MonoBehaviour {
 			Debug.Log(e.Message);
 		}
 	}
-	
 	/**
 	 * Call update every frame in order to dispatch all messages that have come
 	 * in on the listener thread
@@ -43,7 +63,10 @@ public class UnityOSCReceiver : MonoBehaviour {
 		//so we used a shared proccessQueue full of OSC Messages
 		lock(processQueue){
 			foreach( OSCMessage message in processQueue){
-				BroadcastMessage("OSCMessageReceived", message, SendMessageOptions.DontRequireReceiver);
+				if(OSCMessageReceived != null){
+					OSCMessageReceived(message); //uses events/delegates for speed, as opposed to BroadcastMessage. Clients should subscribe to this event.
+				}
+				//BroadcastMessage("OSCMessageReceived", message, SendMessageOptions.DontRequireReceiver);
 			}
 			processQueue.Clear();
 		}
@@ -55,6 +78,7 @@ public class UnityOSCReceiver : MonoBehaviour {
 	
 	public void disconnect() {
       	if (receiver!=null){
+//		print("disconnecting.");
       		 receiver.Close();
       	}
       	

@@ -39,9 +39,19 @@ public class OpenTSPSUnityListener : MonoBehaviour  {
 		return people.Count;	
 	}
 	
+	public void OnEnable(){
+		UnityOSCReceiver.OSCMessageReceived += new UnityOSCReceiver.OSCMessageReceivedHandler(OSCMessageReceived);
+		
+	}
+	public void OnDisable(){
+		UnityOSCReceiver.OSCMessageReceived -= new UnityOSCReceiver.OSCMessageReceivedHandler(OSCMessageReceived);
+		
+	}
+	
 	public void OSCMessageReceived(OSC.NET.OSCMessage message){	
 		string address = message.Address;
 		ArrayList args = message.Values;
+		
 		
 		if (address == "/TSPS/personEntered/") {
 			addPerson(args);
@@ -67,6 +77,9 @@ public class OpenTSPSUnityListener : MonoBehaviour  {
 				people.Remove(person_id);
 				//personWillLeave(personToRemove);
 			}
+		}
+		else{
+			print(address + " ");
 		}
 	}
 		
